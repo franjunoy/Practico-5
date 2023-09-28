@@ -44,3 +44,31 @@ int insertarFin(lista **i, int dato){
     }
     return 1;
 }
+int eliminar(lista **i, int dato){
+    lista *actual = *i, *ant = NULL, *sig = NULL;
+    while(actual != NULL){
+        if(actual->dato == dato){
+            if(actual == *i){
+                *i = actual->sgte;
+                if(actual->sgte != NULL)
+                    actual->sgte->ante = NULL;
+            } else
+            if(actual->sgte == NULL){
+                ant = actual->ante;
+                actual->ante = NULL;
+                ant->sgte = NULL;
+            }else{
+                ant = actual->ante;
+                actual->ante = NULL;
+                sig = actual->sgte;
+                actual->sgte = NULL;
+                ant->sgte = sig;
+                sig->ante = ant;
+            }
+            free(actual);
+            return 0;
+        }
+        actual = actual->sgte;
+    }
+    return 1;
+}
