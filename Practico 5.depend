@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1574290226 source:c:\users\santi\desktop\fran c\practico 5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listaDob.h"
+
+1574287702 c:\users\santi\desktop\fran c\practico 5\listadob.h
+
