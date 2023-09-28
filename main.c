@@ -72,3 +72,27 @@ int eliminar(lista **i, int dato){
     }
     return 1;
 }
+int main(){
+    lista *i;
+    i = NULL;
+    insertar(&i, 5);
+    insertar(&i, 3);
+    insertar(&i, 4);
+    insertar(&i, 10);
+    insertarFin(&i, 6);
+    insertarFin(&i, 8);
+    insertarFin(&i, 1);
+    insertar(&i, 8);
+    insertar(&i, 1);
+    printf("Listo elementos%d\n");
+    listar(i);
+    printf("Fin del listado\n");
+    eliminar(&i, 4);
+    eliminar(&i, 1);
+    eliminar(&i, 10);
+    eliminar(&i, 14);
+    printf("Listo elementos\n");
+    listar(i);
+    printf("Fin del listado\n");
+    return 0;
+}
