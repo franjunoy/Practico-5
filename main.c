@@ -13,3 +13,16 @@ lista *crearLista(int dato){
     return nuevo;
 }
 
+int insertar (lista **i, int d){
+    lista *nuevo = NULL;
+    nuevo = crearLista(d);
+    if(nuevo != NULL){
+        nuevo->sgte = *i;
+        nuevo->ante = NULL;
+        if(*i != NULL)
+            (*i)->ante = nuevo;
+            *i = nuevo;
+        return 0;
+        }
+    return 1;
+}
